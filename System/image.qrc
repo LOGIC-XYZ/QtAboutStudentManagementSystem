@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="back">K:/usethings/e032-482ee597fbaf3ba5b29c2710c55ca00e.png</file>
+        <file alias="logo">K:/usethings/R-C.png</file>
+    </qresource>
+</RCC>
