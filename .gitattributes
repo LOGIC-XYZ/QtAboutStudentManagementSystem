@@ -1,0 +1,7 @@
+# 将所有文本文件视为LF，并强制转换为LF
+*.txt text eol=lf
+# 将所有C/C++文件视为LF
+*.cpp text eol=lf
+*.h text eol=lf
+# 对于已知是二进制的文件，确保Git不处理换行符
+*.png binary
