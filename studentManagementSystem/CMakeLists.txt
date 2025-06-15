@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(System VERSION 0.1 LANGUAGES CXX)
+project(studentManagementSystem VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -20,7 +20,7 @@ set(PROJECT_SOURCES
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(System
+    qt_add_executable(studentManagementSystem
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         MenuWidget.h
@@ -44,43 +44,34 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         DisplayWidget.ui
         studentinfo.h
         studentinfo.cpp
-
-
-
-
-
-
-
-
-
     )
 # Define target properties for Android with Qt 6 as:
-#    set_property(TARGET System APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#    set_property(TARGET studentManagementSystem APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
-        add_library(System SHARED
+        add_library(studentManagementstudentManagementSystem SHARED
             ${PROJECT_SOURCES}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
-        add_executable(System
+        add_executable(studentManagementstudentManagementSystem
             ${PROJECT_SOURCES}
         )
     endif()
 endif()
 
-target_link_libraries(System PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(studentManagementSystem PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
 if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.System)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.studentManagementSystem)
 endif()
-set_target_properties(System PROPERTIES
+set_target_properties(studentManagementSystem PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -89,12 +80,12 @@ set_target_properties(System PROPERTIES
 )
 
 include(GNUInstallDirs)
-install(TARGETS System
+install(TARGETS studentManagementSystem
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(System)
+    qt_finalize_executable(studentManagementSystem)
 endif()
