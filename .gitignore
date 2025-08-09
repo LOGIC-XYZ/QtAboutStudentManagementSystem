@@ -54,3 +54,4 @@ Desktop.ini
 *~ # 常见编辑器备份文件
 *.tmp
 *.log
+.gitignore
